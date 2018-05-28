@@ -2,21 +2,23 @@ LinePoint API
 =======
 LinePoint Front end API
 
+[![Build Status](https://travis-ci.com/Openovate/linepoint.svg?token=usAby1dW3tLQe7YAy7Cr&branch=master)](https://linepoint.com)
+
 How to create an App
 ---------------
 
-1. [Log In](https://example.com/login)
-2. Go to [App Search](https://example.com/developer/app/search)
-3. [Create](https://example.com/developer/app/create) an app
+1. [Log In](https://linepoint.com/login)
+2. Go to [App Search](https://linepoint.com/developer/app/search)
+3. [Create](https://linepoint.com/developer/app/create) an app
 
 ### How OAuth 2 Works
 
-In [App Search](https://example.com/developer/app/search), click the lock. This is what you redirect to get a user's permission.
+In [App Search](https://linepoint.com/developer/app/search), click the lock. This is what you redirect to get a user's permission.
 
-### Example scope
+### linepoint scope
 
 ```
-https://www.example.com/dialog/request?client_id=[app_token]&redirect_uri=[redirect url]&scope=user_profile
+https://www.linepoint.com/dialog/request?client_id=[app_token]&redirect_uri=[redirect url]&scope=user_profile
 ```
 
 ### Exchange code with a token
@@ -24,7 +26,7 @@ https://www.example.com/dialog/request?client_id=[app_token]&redirect_uri=[redir
 After the user approves of your app, they will be redirected back to the specified `[redirect url]` with a new URL parameter called `?code`. The last thing you need to do is exchange that code for a token. Using cURL, call the following.
 
 ```
-POST : https://example.com/rest/access
+POST : https://linepoint.com/rest/access
 ```
 
 Parameter | Type | Usage
@@ -59,7 +61,7 @@ Getting Account Information.
 Signin up a user via API.
 
 ```
-POST : https://example.com/rest/signup
+POST : https://linepoint.com/rest/signup
 ```
 
 Parameter | Type | Usage
@@ -95,7 +97,7 @@ The response should be similar to the following and this will response the data 
         "profile_last": null,
         "profile_username": null,
         "profile_email": "johndoe@gmail.com",
-        "profile_image": "{\"large\": \"http://example.dev/images/avatar/avatar-10.png\", \"small\": \"http://example.dev/images/avatar/avatar-10.png\"}",
+        "profile_image": "{\"large\": \"http://linepoint.dev/images/avatar/avatar-10.png\", \"small\": \"http://linepoint.dev/images/avatar/avatar-10.png\"}",
         "profile_phone": null,
         "profile_gender": null,
         "profile_birthdate": null,
@@ -132,7 +134,7 @@ The response should be similar to the following and this will response the data 
 Log in via API.
 
 ```
-POST : https://example.com/rest/login
+POST : https://linepoint.com/rest/login
 ```
 
 Parameter | Type | Usage
@@ -168,7 +170,7 @@ The response should be similar to the following and this will response the data 
             "profile_last": null,
             "profile_username": null,
             "profile_email": "johndoe@gmail.com",
-            "profile_image": "{\"large\": \"http://example.dev/images/avatar/avatar-10.png\", \"small\": \"http://example.dev/images/avatar/avatar-10.png\"}",
+            "profile_image": "{\"large\": \"http://linepoint.dev/images/avatar/avatar-10.png\", \"small\": \"http://linepoint.dev/images/avatar/avatar-10.png\"}",
             "profile_phone": null,
             "profile_gender": null,
             "profile_birthdate": null,
@@ -205,7 +207,7 @@ The response should be similar to the following and this will response the data 
 Forgot Password via API.
 
 ```
-POST : https://example.com/rest/forgot
+POST : https://linepoint.com/rest/forgot
 ```
 
 Parameter | Type | Usage
@@ -215,7 +217,7 @@ Parameter | Type | Usage
 `auth_slug` | email | required
 
 ```
-The response should be similar to the following and the/example will send the forgot password email to the user.
+The response should be similar to the following and the/linepoint will send the forgot password email to the user.
 
 {
     "error": false,
@@ -237,7 +239,7 @@ The response should be similar to the following and the/example will send the fo
         "profile_last": null,
         "profile_username": null,
         "profile_email": "johndoe@gmail.com",
-        "profile_image": "{\"large\": \"http://example.dev/images/avatar/avatar-10.png\", \"small\": \"http://example.dev/images/avatar/avatar-10.png\"}",
+        "profile_image": "{\"large\": \"http://linepoint.dev/images/avatar/avatar-10.png\", \"small\": \"http://linepoint.dev/images/avatar/avatar-10.png\"}",
         "profile_phone": null,
         "profile_gender": null,
         "profile_birthdate": null,
@@ -267,7 +269,7 @@ Getting Infomation about the user.
 Search for profile detail per user
 
 ```
-GET : https://example.com/rest/profile/detail/:profile_id
+GET : https://linepoint.com/rest/profile/detail/:profile_id
 ```
 
 Parameter | Type | Usage
@@ -290,8 +292,8 @@ Change the `:profile_id` with the profile_id of the user and the response should
         "profile_username": null,
         "profile_email": "johndoe@gmail.com",
         "profile_image": {
-            "large": "http://example.dev/images/avatar/avatar-10.png",
-            "small": "http://example.dev/images/avatar/avatar-10.png"
+            "large": "http://linepoint.dev/images/avatar/avatar-10.png",
+            "small": "http://linepoint.dev/images/avatar/avatar-10.png"
         },
         "profile_phone": null,
         "profile_gender": null,
@@ -316,7 +318,7 @@ Change the `:profile_id` with the profile_id of the user and the response should
 Search for profiles
 
 ```
-GET : https://example.com/rest/profile/search/:profile_id
+GET : https://linepoint.com/rest/profile/search/:profile_id
 ```
 
 Parameter | Type | Usage
@@ -345,8 +347,8 @@ The response should be like the following.
                 "profile_username": null,
                 "profile_email": "johndoe@gmail.com",
                 "profile_image": {
-                    "large": "http://example.dev/images/avatar/avatar-10.png",
-                    "small": "http://example.dev/images/avatar/avatar-10.png"
+                    "large": "http://linepoint.dev/images/avatar/avatar-10.png",
+                    "small": "http://linepoint.dev/images/avatar/avatar-10.png"
                 },
                 "profile_phone": null,
                 "profile_gender": null,
@@ -374,7 +376,7 @@ The response should be like the following.
 Update profile information per user
 
 ```
-POST https://example.com/rest/profile/update/:profile_id
+POST https://linepoint.com/rest/profile/update/:profile_id
 ```
 
 Change the `:profile_id` with the profile_id of the user and add the parameter you want to update. 
@@ -404,7 +406,7 @@ The response should be like the following.
         "profile_last": "John",
         "profile_first": "Doe",
         "profile_id": "57093",
-        "profile_image": "{\"large\":\"http:\\/\\/example.dev\\/images\\/avatar\\/avatar-2.png\",\"small\":\"http:\\/\\/example.dev\\/images\\/avatar\\/avatar-2.png\"}",
+        "profile_image": "{\"large\":\"http:\\/\\/linepoint.dev\\/images\\/avatar\\/avatar-2.png\",\"small\":\"http:\\/\\/linepoint.dev\\/images\\/avatar\\/avatar-2.png\"}",
         "profile_updated": "2017-09-18 13:52:06",
         "original": {
             "client_id": "300aaf826a59b87b2d5a4ebb6e3d336c",
@@ -412,7 +414,7 @@ The response should be like the following.
             "profile_last": "John",
             "profile_first": "Doe",
             "profile_id": "57093",
-            "profile_image": "{\"large\":\"http:\\/\\/example.dev\\/images\\/avatar\\/avatar-2.png\",\"small\":\"http:\\/\\/example.dev\\/images\\/avatar\\/avatar-2.png\"}",
+            "profile_image": "{\"large\":\"http:\\/\\/linepoint.dev\\/images\\/avatar\\/avatar-2.png\",\"small\":\"http:\\/\\/linepoint.dev\\/images\\/avatar\\/avatar-2.png\"}",
             "profile_updated": "2017-09-18 13:52:06"
         }
     }
@@ -428,7 +430,7 @@ Settings
 Get cashback summaries and list of cashback according to status
 
 ```
-GET https://example.com/rest/settings/cashback-summary/:profile_id
+GET https://linepoint.com/rest/settings/cashback-summary/:profile_id
 ```
 
 Change the `:profile_id` with the profile_id of the user. 
@@ -499,7 +501,7 @@ The response should be like the following.
 Get User's referral data and list of referrals
 
 ```
-GET https://example.com/rest/settings/refer/:profile_id
+GET https://linepoint.com/rest/settings/refer/:profile_id
 ```
 
 Change the `:profile_id` with the profile_id of the user. 
@@ -532,7 +534,7 @@ The response should be like the following.
 Report a missing cashback (`Discrepancy`)
 
 ```
-POST https://example.com/rest/settings/missing-cashback/:profile_id
+POST https://linepoint.com/rest/settings/missing-cashback/:profile_id
 ```
 
 Change the `:profile_id` with the profile_id of the user. 
@@ -581,7 +583,7 @@ Stores
 Search for Stores or list of stores
 
 ```
-GET https://example.com/rest/store/search
+GET https://linepoint.com/rest/store/search
 ```
 
 Parameter | Type | Usage
@@ -611,15 +613,15 @@ The response should be like the following.
                 "store_id": "1",
                 "store_name": "Lazada",
                 "store_logo": {
-                    "large": "http://example.com/example-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858",
-                    "small": "http://example.com/example-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858",
-                    "original": "http://example.com/example-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858"
+                    "large": "http://linepoint.com/linepoint-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858",
+                    "small": "http://linepoint.com/linepoint-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858",
+                    "original": "http://linepoint.com/linepoint-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858"
                 },
                 "store_slug": "Lazada-s1",
-                "store_link": "http://example.dev/Lazada-s1/store",
+                "store_link": "http://linepoint.dev/Lazada-s1/store",
                 "store_root_url": "www.lazada.com.ph",
-                "store_redirect": "http://example.dev/redirect/store/1",
-                "store_redirect_api": "http://example.dev/rest/redirect/store/1?access_token=",
+                "store_redirect": "http://linepoint.dev/redirect/store/1",
+                "store_redirect_api": "http://linepoint.dev/rest/redirect/store/1?access_token=",
                 "store_description": "Lazada Description",
                 "store_default_cashback": "0.00",
                 "store_max_purchase": "100000.00",
@@ -637,7 +639,7 @@ The response should be like the following.
 Get Store Detail
 
 ```
-GET https://example.com/rest/store/detail/:store_id
+GET https://linepoint.com/rest/store/detail/:store_id
 ```
 
 Parameter | Type | Usage
@@ -659,14 +661,14 @@ The response should be like the following.
         "store_id": "1",
         "store_name": "Lazada",
         "store_logo": {
-            "large": "http://example.com/example-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858",
-            "small": "http://example.com/example-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858",
-            "original": "http://example.com/example-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858"
+            "large": "http://linepoint.com/linepoint-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858",
+            "small": "http://linepoint.com/linepoint-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858",
+            "original": "http://linepoint.com/linepoint-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858"
         },
         "store_slug": "Lazada-s1",
-        "store_link": "http://example.dev/Lazada-s1/store",
+        "store_link": "http://linepoint.dev/Lazada-s1/store",
         "store_root_url": "www.lazada.com.ph",
-        "store_redirect": "http://example.dev/redirect/store/1",
+        "store_redirect": "http://linepoint.dev/redirect/store/1",
         "store_description": "Lazada Description",
         "store_default_cashback": "0.00",
         "store_max_purchase": "100000.00",
@@ -681,7 +683,7 @@ The response should be like the following.
 Get redirect link and shopping trips for store
 
 ```
-GET https://example.com/rest/bzb/redirect/store/:store_id/:imei/:click_id
+GET https://linepoint.com/rest/lpt/redirect/store/:store_id/:imei/:click_id
 ```
 
 Parameter | Type | Usage
@@ -712,7 +714,7 @@ Deals
 Search for Stores or list of stores
 
 ```
-GET https://example.com/rest/deal/search
+GET https://linepoint.com/rest/deal/search
 ```
 
 Parameter | Type | Usage
@@ -735,13 +737,13 @@ The response should be like the following.
                 "promotion_id": "1",
                 "promotion_title": "Lazada Deal Number 1",
                 "promotion_slug": "Lazada-Deal-Number-1-P1",
-                "promotion_link": "https://example.com/Lazada-Deal-Number-1-P1/deal",
-                "promotion_redirect": "https://example.com//redirect/promotion/1",
+                "promotion_link": "https://linepoint.com/Lazada-Deal-Number-1-P1/deal",
+                "promotion_redirect": "https://linepoint.com//redirect/promotion/1",
                 "promotion_images": [
                     {
-                        "large": "https://example.com/upload/img.png",
-                        "small": "https://example.com/upload/img.png",
-                        "original": "https://example.com/upload/img.png"
+                        "large": "https://linepoint.com/upload/img.png",
+                        "small": "https://linepoint.com/upload/img.png",
+                        "original": "https://linepoint.com/upload/img.png"
                     }
                 ],
                 "promotion_detail": "<p>Deal Sample Descrition<br></p>",
@@ -759,13 +761,13 @@ The response should be like the following.
                 "store_id": "1",
                 "store_name": "Lazada",
                 "store_logo": {
-                    "large": "http://example.com/example-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858",
-                    "small": "http://example.com/example-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858",
-                    "original": "http://example.com/example-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858"
+                    "large": "http://linepoint.com/linepoint-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858",
+                    "small": "http://linepoint.com/linepoint-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858",
+                    "original": "http://linepoint.com/linepoint-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858"
                 },
                 "store_slug": "Lazada-s1",
-                "store_link": "http://example.dev/Lazada-s1/store",
-                "store_redirect": "http://example.dev/redirect/store/1",
+                "store_link": "http://linepoint.dev/Lazada-s1/store",
+                "store_redirect": "http://linepoint.dev/redirect/store/1",
                 "store_description": "Lazada Description",
                 "store_default_cashback": "0.00",
                 "store_max_purchase": "100000.00",
@@ -783,7 +785,7 @@ The response should be like the following.
 Get Deal Detail
 
 ```
-GET https://example.com/rest/Deal/detail/:promotion_id
+GET https://linepoint.com/rest/Deal/detail/:promotion_id
 ```
 
 Parameter | Type | Usage
@@ -801,13 +803,13 @@ The response should be like the following.
         "promotion_id": "1",
         "promotion_title": "Lazada Deal Number 1",
         "promotion_slug": "Lazada-Deal-Number-1-P1",
-        "promotion_link": "https://example.com/Lazada-Deal-Number-1-P1/deal",
-        "promotion_redirect": "https://example.com//redirect/promotion/1",
+        "promotion_link": "https://linepoint.com/Lazada-Deal-Number-1-P1/deal",
+        "promotion_redirect": "https://linepoint.com//redirect/promotion/1",
         "promotion_images": [
             {
-                "large": "https://example.com/upload/img.png",
-                "small": "https://example.com/upload/img.png",
-                "original": "https://example.com/upload/img.png"
+                "large": "https://linepoint.com/upload/img.png",
+                "small": "https://linepoint.com/upload/img.png",
+                "original": "https://linepoint.com/upload/img.png"
             }
         ],
         "promotion_detail": "<p>Deal Sample Descrition<br></p>",
@@ -825,13 +827,13 @@ The response should be like the following.
         "store_id": "1",
         "store_name": "Lazada",
         "store_logo": {
-            "large": "http://example.com/example-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858",
-            "small": "http://example.com/example-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858",
-            "original": "http://example.com/example-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858"
+            "large": "http://linepoint.com/linepoint-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858",
+            "small": "http://linepoint.com/linepoint-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858",
+            "original": "http://linepoint.com/linepoint-upload/stores/thumbnail_images/000/000/001/original/Lazada_logo.png?1462513858"
         },
         "store_slug": "Lazada-s1",
-        "store_link": "http://example.dev/Lazada-s1/store",
-        "store_redirect": "http://example.dev/redirect/store/1",
+        "store_link": "http://linepoint.dev/Lazada-s1/store",
+        "store_redirect": "http://linepoint.dev/redirect/store/1",
         "store_description": "Lazada Description",
         "store_default_cashback": "0.00",
         "store_max_purchase": "100000.00",
@@ -847,7 +849,7 @@ The response should be like the following.
 Get redirect link and shopping trips for store
 
 ```
-GET https://example.com/rest/bzb/redirect/promotion/:promotion_id/:imei/:click_id
+GET https://linepoint.com/rest/lpt/redirect/promotion/:promotion_id/:imei/:click_id
 ```
 
 Parameter | Type | Usage
@@ -877,7 +879,7 @@ Category
 Get list of categories
 
 ```
-GET https://example.com/rest/category/search
+GET https://linepoint.com/rest/category/search
 ```
 
 Parameter | Type | Usage
@@ -912,7 +914,7 @@ The response should be like the following.
 
 Search per category
 
-GET https://example.com/rest/category/detail/:category_id
+GET https://linepoint.com/rest/category/detail/:category_id
 
 Parameter | Type | Usage
 ------------ | -------------
@@ -946,7 +948,7 @@ Banners
 Get list of Banners
 
 ```
-GET https://example.com/rest/banner/search
+GET https://linepoint.com/rest/banner/search
 ```
 
 Parameter | Type | Usage
@@ -970,11 +972,11 @@ The response should be like the following.
             "banner_created": "2017-02-28 16:26:33",
             "banner_updated": "2017-08-12 09:52:25",
             "banner_image": {
-                "large": "https://example.com/upload/img.png",
-                "small": "https://example.com/upload/img.png",
-                "original": "https://example.com/upload/img.png"
+                "large": "https://linepoint.com/upload/img.png",
+                "small": "https://linepoint.com/upload/img.png",
+                "original": "https://linepoint.com/upload/img.png"
             },
-            "banner_link": "https://example.com",
+            "banner_link": "https://linepoint.com",
             "banner_priority": "7",
             "banner_start": "2017-02-28 00:00:00",
             "banner_end": "2017-08-01 00:00:00",
@@ -991,7 +993,7 @@ The response should be like the following.
 Search per banner
 
 ```
-GET https://example.com/rest/banner/detail/:category_id
+GET https://linepoint.com/rest/banner/detail/:category_id
 ```
 
 Parameter | Type | Usage
@@ -1010,11 +1012,11 @@ The response should be like the following.
         "banner_created": "2017-02-28 16:05:06",
         "banner_updated": "2017-06-22 23:05:46",
         "banner_image": {
-            "large": "https://example.com/upload/img.png",
-            "small": "https://example.com/upload/img.png",
-            "original": "https://example.com/upload/img.png"
+            "large": "https://linepoint.com/upload/img.png",
+            "small": "https://linepoint.com/upload/img.png",
+            "original": "https://linepoint.com/upload/img.png"
         },
-        "banner_link": "https://example.com",
+        "banner_link": "https://linepoint.com",
         "banner_priority": "7",
         "banner_start": "2017-02-28 00:00:00",
         "banner_end": "2018-01-01 00:00:00",
